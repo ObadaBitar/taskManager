@@ -1,26 +1,94 @@
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-between;
+  stroke: black;
+  stroke-width: 0.25em;
+}
+
+.burger {
+  display: block;
+  font-size: 1.5em;
+  color: black;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+li {
+  list-style-type: none;
+}
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+main {
+  flex: 1;
+  min-height: 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0;
+  gap:0.25em;
+}
+
+input {
+  padding: 0.5em;
+}
+
+label {
+  font-size: 1.15em;
+}
+
+/* https://stackoverflow.com/questions/4137255/checkboxes-in-web-pages-how-to-make-them-bigger */
+input[type='checkbox'] {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@media (min-width: 768px) {
+
+  body{
+    padding: 0.1em 5em;
+  }
+
   html {
     color-scheme: dark;
+  }
+
+  .burger{
+    display: none;
   }
 }
